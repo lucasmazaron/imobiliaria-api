@@ -62,12 +62,6 @@ $ yarn test:cov
 
 # Padrões de Controle de Versão
 
-> * Sempre verificar com `git branch` em qual branch você está.  
-> * Garantir que está na develop antes de começar.  
-> * E também Rodar `git pull` antes para garantir que está com todas as alterações!  
-> * Sempre conferir pelo VSCODE os arquivos alterados antes de commitar! Garantir que não
-> alterou nada por engano.
-
 ```bash
 # Após terminar suas alterações adicionar tudo para enviar
 $ git add .
@@ -80,17 +74,3 @@ $ yarn commit
 
 > * A segunda desc. que irá pedir, é a desc. longa. Nessa pode informar o que foi feito na task. Ex: Criado tela de login.
 > * Em seguida ira pedir algumas informações desnecessárias. Pode dar enter vazio mesmo!
-
-```bash
-# Mudar a branch para a branch da task
-# A Branch deve ter o nome da seguinte forma: codigoTask-descrição
-$ git switch -C IM-3-tela-login
-
-# Enviar alterações na branch criada
-# Alterar nome IM-3-tela-login, para o nome da branch criada com o comando acima.
-$ git push origin IM-3-tela-login
-```
-
-> Entrar no gitlab, dentro do projeto irá aparecer uma mensagem pedindo para criar o 
-> merge request. Clicar no botão para criar!  
-> Atribuir uma pessoa para CODE REVIEW e passar a task do JIRA para CODE REVIEW.
