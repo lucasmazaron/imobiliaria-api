@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Define the `User` table in the database
+model User {
+  id         String    @id @default(uuid())
+  fullName   String
+  email      String    @unique
+  password   String
+  created_at DateTime  @default(now())
+  updated_at DateTime?
+  active     Boolean   @default(true)
+  admin      Boolean
+
+  @@map("user")
+}
+
+model People {
+  id                  String    @id @default(uuid())
+  fullName            String    @db.VarChar(60)
+  fantasyName         String?   @db.VarChar(60)
+  cpf_cnpj            String    @unique @db.VarChar(14)
+  peopleType          String?   @db.VarChar(10)
+  general_records     String?   @db.VarChar(12) //RG
+  estate_subscription String?   @db.VarChar(14) //Inscrição Estadual
+  address             String?   @db.VarChar(60)
+  address_number      String?   @db.VarChar(8)
+  address_district    String?   @db.VarChar(60)
+  address_city        String?   @db.VarChar(60)
+  address_uf          String?   @db.VarChar(60)
+  zip_code            String?   @db.VarChar(9)
+  address_complement  String?   @db.VarChar(60)
+  contact_name        String?   @db.VarChar(60)
+  contact_fone        String?   @db.VarChar(12)
+  contact_cell        String?   @db.VarChar(12)
+  buyer               Boolean   @default(false)
+  salesman            Boolean   @default(false)
+  contact_email       String?
+  created_at          DateTime  @default(now())
+  updated_at          DateTime?
+  birth_date          DateTime  @db.Date
+  active              Boolean   @default(true)
+
+  @@map("people")
+}
+
+model Property {
+  id                    String  @id @default(uuid())
+  description           String  @db.VarChar
+  type                  String  @db.VarChar
+  selling_price         String  @db.VarChar
+  rent_price            String  @db.VarChar
+  land_size             String  @db.VarChar
+  constructed_land_size String  @db.VarChar
+  room_units            Int
+  suite_units           Int
+  bathroom_units        Int
+  garage_units          Int
+  address               String  @db.VarChar
+  address_number        String  @db.VarChar
+  address_district      String  @db.VarChar
+  address_city          String  @db.VarChar
+  address_uf            String  @db.VarChar
+  zip_code              String  @db.VarChar
+  active                Boolean @default(true)
+  sellable              Boolean @default(true)
+  rentable              Boolean @default(true)
+
+  @@map("property")
+}

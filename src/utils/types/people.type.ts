@@ -1,0 +1,26 @@
+export type TPeople = {
+  id: string;
+  fullName: string;
+  fantasyName: string;
+  cpf_cnpj: string;
+  peopleType: string;
+  general_records: string;
+  estate_subscription: string;
+  address: string;
+  address_number: string;
+  address_district: string;
+  address_city: string;
+  address_uf: string;
+  zip_code: string;
+  address_complement: string;
+  contact_name: string;
+  contact_fone: string;
+  contact_cell: string;
+  buyer: boolean;
+  salesman: boolean;
+  contact_email: string;
+  created_at: Date;
+  updated_at: Date;
+  birth_date: Date;
+  active: boolean;
+};

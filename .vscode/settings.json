@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "cSpell.words": [
+    "consts",
+    "dtos",
+    "nestjs",
+    "ossp",
+    "pgcrypto",
+    "varchar"
+  ]
+}
